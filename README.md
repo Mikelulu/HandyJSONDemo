@@ -1,13 +1,16 @@
 -  ***HandyJSON介绍***
+
 首先说一下比较流行的`SwiftyJSON`库，主要是基于对iOS原生`JSONSerialization`类的封装。虽然用起来也比较顺手，但它不支持json和model转换，并且还需要一层一层的进行取值（json["akey"]["bkey"]["ckey"].stringValue），所以很容易出现由于key写错了而产生的一系列bug。与`SwiftyJSON`相比`HandyJson`更贴近于实战。
 
  `HandyJson` 是阿里巴巴开源的一个用于Swift语言中的JSON序列化/反序列化库，可以很方便进行json与model的转换，以及常用的字典与模型的互相转换。
 
 - ***HandyJSON特点***
+
 它支持纯swift类，使用也简单。它反序列化时(把JSON转换为Model)不要求Model从`NSObject`继承(因为它不是基于`KVC`机制)，也不要求你为Model定义一个`Mapping`函数。只要你定义好Model类，声明它服从`HandyJSON`协议，`HandyJSON`就能自行以各个属性的属性名为Key，从JSON串中解析值。
 [HandyJSON设计原理](http://www.cocoachina.com/swift/20161109/18010.html)
 
 - ***HandyJSON用法***
+
 1.与Alamofire结合使用
 ```
 /// 结构体model 来接收得到的jsonString
